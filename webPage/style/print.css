@@ -1,0 +1,949 @@
+/* @page {
+  size: A4;
+  margin: 0;
+} */
+.smooth-16 {
+  text-shadow: calc(var(--stroke-width) * 1) calc(var(--stroke-width) * 0) var(--stroke-distance) var(--stroke-color),
+    calc(var(--stroke-width) * 0.9239) calc(var(--stroke-width) * 0.3827) var(--stroke-distance) var(--stroke-color),
+    calc(var(--stroke-width) * 0.7071) calc(var(--stroke-width) * 0.7071) var(--stroke-distance) var(--stroke-color),
+    calc(var(--stroke-width) * 0.3827) calc(var(--stroke-width) * 0.9239) var(--stroke-distance) var(--stroke-color),
+    calc(var(--stroke-width) * 0) calc(var(--stroke-width) * 1) var(--stroke-distance) var(--stroke-color),
+    calc(var(--stroke-width) * -0.3827) calc(var(--stroke-width) * 0.9239) var(--stroke-distance) var(--stroke-color),
+    calc(var(--stroke-width) * -0.7071) calc(var(--stroke-width) * 0.7071) var(--stroke-distance) var(--stroke-color),
+    calc(var(--stroke-width) * -0.9239) calc(var(--stroke-width) * 0.3827) var(--stroke-distance) var(--stroke-color),
+    calc(var(--stroke-width) * -1) calc(var(--stroke-width) * 0) var(--stroke-distance) var(--stroke-color),
+    calc(var(--stroke-width) * -0.9239) calc(var(--stroke-width) * -0.3827) var(--stroke-distance) var(--stroke-color),
+    calc(var(--stroke-width) * -0.7071) calc(var(--stroke-width) * -0.7071) var(--stroke-distance) var(--stroke-color),
+    calc(var(--stroke-width) * -0.3827) calc(var(--stroke-width) * -0.9239) var(--stroke-distance) var(--stroke-color),
+    calc(var(--stroke-width) * 0) calc(var(--stroke-width) * -1) var(--stroke-distance) var(--stroke-color),
+    calc(var(--stroke-width) * 0.3827) calc(var(--stroke-width) * -0.9239) var(--stroke-distance) var(--stroke-color),
+    calc(var(--stroke-width) * 0.7071) calc(var(--stroke-width) * -0.7071) var(--stroke-distance) var(--stroke-color),
+    calc(var(--stroke-width) * 0.9239) calc(var(--stroke-width) * -0.3827) var(--stroke-distance) var(--stroke-color);
+}
+
+:root {
+  --stomp-color: rgb(4, 167, 4);
+  --win-color: rgb(87, 228, 94);
+  --tie-color: rgb(58, 136, 238);
+  --stroke-width: 0.3mm;
+  --stroke-distance: 0;
+  --stroke-color: white;
+}
+
+.monochrome {
+  --stomp-color: rgb(0, 0, 0);
+  --win-color: rgb(117, 117, 117);
+  --tie-color: repeating-linear-gradient(45deg,
+      #858585,
+      #858585 1mm,
+      #ffffff 1mm,
+      #ffffff 2mm);
+  filter: grayscale(1);
+}
+
+@media print {
+  html {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* .paper-single {
+    background-color: rgb(150, 150, 150);
+    height: 210mm;
+    width: 297mm;
+  } */
+
+  @page {
+    size: A4 landscape;
+    margin: 0mm;
+  }
+
+  .paper-single {
+    size: A4 landscape;
+    margin: 0;
+    height: 210mm;
+    width: 297mm;
+    padding: 2mm;
+    box-sizing: border-box;
+    margin: 0mm;
+    page-break-before: always;
+    /* margin: 0 auto; */
+  }
+
+  /* ... the rest of the rules ... */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#pdf {
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: GLEB For Number, Microsoft Yahei;
+  box-sizing: border-box;
+}
+
+header nav,
+footer,
+video,
+audio,
+object,
+embed {
+  display: none;
+}
+
+.paper-single {
+  size: A4 landscape;
+  margin: 0;
+  height: 210mm;
+  width: 297mm;
+  padding: 0.6mm;
+  border: 2mm solid transparent;
+  box-sizing: border-box;
+  margin: 0mm;
+  /* margin: 0 auto; */
+  /* page-break-before: always; */
+}
+
+.page-content {
+  /* background-color: rgb(150, 150, 150); */
+  width: 100%;
+  height: 100%;
+}
+
+.player-title {
+  margin-left: 5mm;
+  width: 100mm;
+  height: 25mm;
+}
+
+.page-title {
+  border-bottom: 1mm solid black;
+  height: 25mm;
+}
+
+.page-title>div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.team-logo {
+  background-color: rgb(100, 100, 100);
+  display: inline-block;
+  height: 23.6mm;
+  /* width: 30mm; */
+}
+
+.team-logo-img {
+  height: 23.6mm;
+}
+
+.player-name {
+  font-weight: Bold;
+  font-size: 12mm;
+}
+
+.player-pos {
+  font-size: 5mm;
+}
+
+.player-describe {
+  width: calc(100% - 135mm);
+  text-align: right;
+  font-size: 4mm;
+  padding-right: 2mm;
+  box-sizing: border-box;
+}
+
+.player-describe span {
+  font-weight: bold;
+  font-size: 5.2mm;
+}
+
+.page-body {
+  width: 100%;
+  height: calc(100% - 30mm);
+  padding: 3mm 5mm;
+}
+
+body {
+  font-size: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* .win-rate-block,
+.outcome-rate-block {
+  display: inline-block;
+} */
+
+.player-total-data {
+  width: 100%;
+  border-bottom: 1mm solid black;
+  position: relative;
+}
+
+.player-total-data>div {
+  width: 100mm;
+  height: 15mm;
+  margin: 2mm 0;
+  font-size: 0;
+}
+
+.win-rate-block>div,
+.outcome-rate-block>div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.win-rate-title,
+.outcome-rate-title,
+.hero-count,
+.hero-data {
+  text-align: right;
+  font-weight: bold;
+}
+
+.hero-count,
+.hero-data {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.player-total-data>.progress-sample {
+  width: 40mm;
+  height: 24mm;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.progress-sample>div>div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.progress-sample>div {
+  padding: 0.75mm 0;
+}
+
+.stomp-rate-sample>.stomp-text,
+.win-rate-sample>.win-text,
+.tie-rate-sample>.tie-text,
+.pos-sample>.pos-text {
+  font-size: 4.5mm;
+  text-align: right;
+  font-weight: bold;
+  width: 17.5mm;
+}
+
+.pos-sample-div {
+  font-size: 4mm;
+}
+
+.pos-sample-div span {
+  vertical-align: middle;
+  font-size: 5mm;
+  font-weight: bold;
+}
+
+.pos-title {
+  font-weight: bold;
+  font-size: 5mm;
+  width: 6mm;
+  height: 6mm;
+  text-align: center;
+  line-height: 4mm;
+  border-radius: 50%;
+  border: 0.6mm black solid;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+.progress-sample .stomp-progress,
+.progress-sample .win-progress,
+.progress-sample .tie-progress {
+  height: 7mm;
+  width: 22.5mm;
+  border: 1mm solid black;
+}
+
+.progress-sample .stomp-progress {
+  background: var(--stomp-color);
+}
+
+.progress-sample .win-progress {
+  background: var(--win-color);
+}
+
+.progress-sample .tie-progress {
+  background: var(--tie-color);
+}
+
+.player-total-data .win-rate-title,
+.player-total-data .outcome-rate-title,
+.player-total-data .hero-count {
+  font-size: 5mm;
+  width: 30mm;
+  text-align: right;
+}
+
+.player-total-data .hero-data {
+  line-height: 8mm;
+  font-size: 12mm;
+  text-align: left;
+  padding-left: 4mm;
+}
+
+.win-rate-progress-back,
+.outcome-rate-progress-back {
+  font-size: 0;
+  height: 50%;
+  border: 1mm solid rgb(50, 50, 50);
+  margin-left: 4mm;
+  width: calc(100% - 37mm);
+}
+
+.win-rate-progress,
+.outcome-stomp-rate-progress,
+.outcome-win-rate-progress,
+.outcome-tie-rate-progress {
+  height: 100%;
+  position: relative;
+  text-align: center;
+  display: inline-block;
+}
+
+.win-rate-perc,
+.outcome-stomp-rate-perc,
+.outcome-win-rate-perc,
+.outcome-tie-rate-perc,
+.team-paper-pair-lane .team-hero-pair-row-mid::before,
+.team-paper-pair-lane .team-hero-pair-row-safelane::before,
+.team-paper-pair-lane .team-hero-pair-row-offlane::before,
+.team-paper-pair-any .player-hero-row-mini::before {
+  font-family: "GLEB";
+  text-shadow: calc(var(--stroke-width) * 1) calc(var(--stroke-width) * 0) var(--stroke-distance) var(--stroke-color),
+    calc(var(--stroke-width) * 0.9239) calc(var(--stroke-width) * 0.3827) var(--stroke-distance) var(--stroke-color),
+    calc(var(--stroke-width) * 0.7071) calc(var(--stroke-width) * 0.7071) var(--stroke-distance) var(--stroke-color),
+    calc(var(--stroke-width) * 0.3827) calc(var(--stroke-width) * 0.9239) var(--stroke-distance) var(--stroke-color),
+    calc(var(--stroke-width) * 0) calc(var(--stroke-width) * 1) var(--stroke-distance) var(--stroke-color),
+    calc(var(--stroke-width) * -0.3827) calc(var(--stroke-width) * 0.9239) var(--stroke-distance) var(--stroke-color),
+    calc(var(--stroke-width) * -0.7071) calc(var(--stroke-width) * 0.7071) var(--stroke-distance) var(--stroke-color),
+    calc(var(--stroke-width) * -0.9239) calc(var(--stroke-width) * 0.3827) var(--stroke-distance) var(--stroke-color),
+    calc(var(--stroke-width) * -1) calc(var(--stroke-width) * 0) var(--stroke-distance) var(--stroke-color),
+    calc(var(--stroke-width) * -0.9239) calc(var(--stroke-width) * -0.3827) var(--stroke-distance) var(--stroke-color),
+    calc(var(--stroke-width) * -0.7071) calc(var(--stroke-width) * -0.7071) var(--stroke-distance) var(--stroke-color),
+    calc(var(--stroke-width) * -0.3827) calc(var(--stroke-width) * -0.9239) var(--stroke-distance) var(--stroke-color),
+    calc(var(--stroke-width) * 0) calc(var(--stroke-width) * -1) var(--stroke-distance) var(--stroke-color),
+    calc(var(--stroke-width) * 0.3827) calc(var(--stroke-width) * -0.9239) var(--stroke-distance) var(--stroke-color),
+    calc(var(--stroke-width) * 0.7071) calc(var(--stroke-width) * -0.7071) var(--stroke-distance) var(--stroke-color),
+    calc(var(--stroke-width) * 0.9239) calc(var(--stroke-width) * -0.3827) var(--stroke-distance) var(--stroke-color);
+}
+
+.win-rate-text,
+.outcome-stomp-rate-text,
+.outcome-win-rate-text,
+.outcome-tie-rate-text {
+  width: 0mm;
+  white-space: nowrap;
+  margin: 0 auto;
+  position: relative;
+  left: -1.5mm;
+}
+
+.outcome-win-rate-text {
+  left: -5mm;
+}
+
+.player-total-data .win-rate-perc,
+.player-total-data .outcome-stomp-rate-perc,
+.player-total-data .outcome-win-rate-perc,
+.player-total-data .outcome-tie-rate-perc {
+  font-size: 4.5mm;
+  position: absolute;
+  width: 100%;
+  z-index: 999 !important;
+  left: 0;
+  top: 0.4mm;
+  font-weight: bold;
+}
+
+.player-total-data .win-rate-text,
+.player-total-data .outcome-stomp-rate-text,
+.player-total-data .outcome-win-rate-text,
+.player-total-data .outcome-tie-rate-text {
+  font-size: 4mm;
+  position: relative;
+  top: 6.3mm;
+  left: -2mm;
+}
+
+.player-total-data .outcome-win-rate-text {
+  left: -6mm;
+}
+
+.win-rate-progress,
+.outcome-win-rate-progress {
+  background: var(--win-color);
+}
+
+.outcome-stomp-rate-progress {
+  background: var(--stomp-color);
+}
+
+.outcome-tie-rate-progress {
+  background: var(--tie-color);
+}
+
+.player-hero-data-body {
+  width: 100%;
+  /* height: calc(100% - 53mm); */
+}
+
+.player-hero-row {
+  height: 50mm;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.player-hero-row-large {
+  height: 42mm;
+  margin: 5mm 0;
+}
+
+
+.player-hero-row-large .player-hero-block {
+  display: inline-block;
+  width: 33.33%;
+  height: 100%;
+}
+
+.player-hero-row-large .player-hero-block-margin {
+  display: block;
+  height: 100%;
+  width: 75mm;
+  margin: 0 auto;
+}
+
+.player-hero-block-margin>div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.player-hero-single-title {
+  width: 100%;
+  border-bottom: 1mm dashed black;
+  margin-bottom: 2mm;
+}
+
+.player-hero-single-title>div {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.player-hero-row-large .player-hero-avatar,
+.player-hero-row-large .player-hero-avatar-image {
+  width: 18mm;
+  height: 18mm;
+}
+
+
+.player-hero-row-large .player-hero-name {
+  font-size: 6mm;
+  font-weight: bold;
+}
+
+.player-hero-row-large .player-hero-single-title-right {
+  padding-left: 2mm;
+}
+
+.player-hero-row-large .player-hero-match-count span {
+  font-size: 7mm;
+  font-weight: bold;
+}
+
+.player-hero-row-large .player-hero-match-count {
+  font-size: 4mm;
+  height: 8mm;
+}
+
+.player-hero-row-large .win-rate-block,
+.player-hero-row-large .outcome-rate-block {
+  width: 100%;
+  height: 10.8mm;
+  margin: 0mm 0;
+}
+
+.player-hero-row-large .win-rate-title,
+.player-hero-row-large .outcome-rate-title,
+.player-hero-row-large .hero-count {
+  font-size: 4.5mm;
+  width: 15mm;
+  text-align: right;
+}
+
+.player-hero-row-large .hero-data {
+  font-size: 8mm;
+  text-align: left;
+  padding-left: 4mm;
+}
+
+.player-hero-row-large .win-rate-progress-back,
+.player-hero-row-large .outcome-rate-progress-back {
+  width: calc(100% - 20mm);
+  height: 6mm;
+}
+
+.player-hero-row-large .win-rate-perc,
+.player-hero-row-large .outcome-stomp-rate-perc,
+.player-hero-row-large .outcome-win-rate-perc,
+.player-hero-row-large .outcome-tie-rate-perc {
+  font-size: 4.5mm;
+  position: absolute;
+  width: 100%;
+  z-index: 999 !important;
+  left: 0;
+  top: 0mm;
+  font-weight: bold;
+}
+
+.player-hero-row-large .win-rate-text,
+.player-hero-row-large .outcome-stomp-rate-text,
+.player-hero-row-large .outcome-win-rate-text,
+.player-hero-row-large .outcome-tie-rate-text {
+  font-size: 3.5mm;
+  position: relative;
+  top: 4.7mm;
+  display: none;
+}
+
+.player-hero-row-mini {
+  height: 35.5mm;
+  justify-content: flex-start;
+}
+
+.player-hero-row-mini .player-hero-block {
+  width: 12.5%;
+  padding: 0 2mm;
+  display: inline-block;
+}
+
+.player-hero-row-mini .player-hero-name,
+.player-hero-row-mini .player-hero-match-count {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.player-hero-row-mini .player-hero-single-title {
+  margin-bottom: 1mm;
+}
+
+.player-hero-row-mini .player-hero-single-title>div {
+  display: block;
+}
+
+.player-hero-row-mini .player-hero-avatar {
+  width: 9mm;
+  margin: 0 auto;
+}
+
+.player-hero-row-mini .player-hero-avatar-image {
+  width: 9mm;
+}
+
+.player-hero-row-mini .player-hero-name {
+  font-size: 4mm;
+  font-weight: bold;
+  padding-left: 0.5mm;
+}
+
+.player-hero-row-mini .player-hero-match-count {
+  font-size: 0mm;
+  height: 3.5mm;
+  width: 3.5mm;
+  border: 0.6mm solid rgb(48, 48, 48);
+  /* border-radius: 50%; */
+  line-height: 3.9mm;
+  box-sizing: content-box;
+  padding: 0.5mm;
+  text-align: center;
+}
+
+.player-hero-row-mini .player-hero-match-count span {
+  font-size: 4mm;
+  font-weight: bold;
+  position: relative;
+  top: -0.4mm;
+}
+
+
+
+.player-hero-row-mini .win-rate-block,
+.player-hero-row-mini .outcome-rate-block {
+  width: 100%;
+  height: 7mm;
+  margin: 0mm 0;
+}
+
+.player-hero-row-mini .win-rate-title,
+.player-hero-row-mini .outcome-rate-title,
+.player-hero-row-mini .hero-count {
+  display: none;
+}
+
+.player-hero-row-mini .hero-data {
+  font-size: 8mm;
+  text-align: left;
+  padding-left: 4mm;
+}
+
+.player-hero-row-mini .win-rate-progress-back,
+.player-hero-row-mini .outcome-rate-progress-back {
+  width: 100%;
+  height: 6mm;
+  margin: 0;
+}
+
+.player-hero-row-mini .win-rate-perc,
+.player-hero-row-mini .outcome-stomp-rate-perc,
+.player-hero-row-mini .outcome-win-rate-perc,
+.player-hero-row-mini .outcome-tie-rate-perc {
+  font-size: 4.5mm;
+  position: absolute;
+  width: 100%;
+  z-index: 999 !important;
+  left: 0;
+  top: 0mm;
+  font-weight: bold;
+}
+
+.player-hero-row-mini .outcome-stomp-rate-perc,
+.player-hero-row-mini .outcome-tie-rate-perc {
+  /* top: 4.7mm; */
+}
+
+.player-hero-row-mini .win-rate-text,
+.player-hero-row-mini .outcome-stomp-rate-text,
+.player-hero-row-mini .outcome-win-rate-text,
+.player-hero-row-mini .outcome-tie-rate-text {
+  font-size: 3.5mm;
+  position: relative;
+  top: 4.7mm;
+  display: none;
+}
+
+.team-paper .progress-sample {
+  height: 32mm;
+}
+
+.team-paper .progress-sample {
+  width: 50mm;
+}
+
+.team-paper .stomp-rate-sample>.stomp-text,
+.team-paper .win-rate-sample>.win-text,
+.team-paper .tie-rate-sample>.tie-text,
+.team-paper .pos-sample>.pos-text {
+  width: 27.5mm;
+}
+
+.player-hero-pos-count .pos-count::before {
+  content: '*';
+  font-weight: normal;
+  font-size: 4mm;
+}
+
+.player-hero-row-large .team-hero-block-left {
+  width: 80%;
+  height: 100%;
+}
+
+.player-hero-row-large .team-hero-block-right {
+  width: 20%;
+  height: 100%;
+  padding-top: 4.8mm;
+  padding-left: 2.3mm;
+}
+
+.team-paper .player-hero-row-large .player-hero-block-margin {
+  width: 80mm;
+}
+
+.player-hero-row-large .team-hero-block-right .team-hero-pos-single {
+  margin-bottom: 1mm;
+  height: 5.8mm;
+}
+
+.player-hero-row-large .pos-title {
+  display: inline-block;
+  font-size: 4.5mm;
+  font-weight: bold;
+  vertical-align: bottom;
+  height: 5mm;
+  width: 5mm;
+  line-height: 3.5mm;
+}
+
+.player-hero-row-large .pos-count {
+  display: inline-block;
+  font-size: 5.5mm;
+  font-weight: bold;
+  vertical-align: bottom;
+  line-height: 5.7mm;
+}
+
+.player-hero-row-large .pos-count::before {
+  content: '*';
+  font-weight: normal;
+  font-size: 4mm;
+  vertical-align: bottom;
+  line-height: 5.7mm;
+}
+
+.team-paper .player-hero-row-mini .player-hero-block {
+  width: 16.66%;
+}
+
+.player-hero-row-mini .team-hero-block-left {
+  width: 78%;
+}
+
+.player-hero-row-mini .team-hero-block-right {
+  width: 22%;
+  padding-top: 3mm;
+  padding-left: 1mm;
+}
+
+.player-hero-row-mini .pos-title {
+  display: inline-block;
+  width: 4mm;
+  height: 4mm;
+  border-width: 0.6mm;
+  font-size: 3.5mm;
+  line-height: 2.6mm;
+  text-align: center;
+  vertical-align: bottom;
+}
+
+.player-hero-row-mini .team-hero-pos-single {
+  white-space: nowrap;
+  padding-top: 0.9mm;
+}
+
+.player-hero-row-mini .pos-count {
+  display: inline-block;
+  font-size: 4.5mm;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: bottom;
+  line-height: 3.3mm;
+}
+
+
+.player-hero-row-mini .pos-count::before {
+  content: '*';
+  font-weight: normal;
+  font-size: 3mm;
+}
+
+.team-lane-total-data {
+  height: 28mm;
+}
+
+.team-lane-total-data>div {
+  display: inline-block;
+  width: 27%;
+  vertical-align: bottom;
+}
+
+.team-paper-pair-lane .team-lane-total-data>div>div {
+  display: block;
+  text-align: left;
+  margin-left: 0;
+}
+
+.team-paper-pair-lane .team-lane-total-data .outcome-rate-progress-back {
+  width: 80%;
+}
+
+.team-paper-pair-lane .progress-sample {
+  height: 25mm;
+}
+
+.team-paper-pair-lane .lane-rate-title {
+  width: 100%;
+  margin-bottom: 5mm;
+}
+
+.team-paper-pair-lane .player-hero-row-mini .player-hero-block {
+  width: 12.5%;
+}
+
+.team-paper-pair-lane .player-hero-row-mini .player-hero-block .team-hero-block-left {
+  width: 100%;
+}
+
+.team-paper-pair-lane .player-hero-row-mini {
+  border-top: #27408b 1mm solid;
+  border-left: #27408b 1mm solid;
+  margin-top: 9mm;
+  height: 40mm;
+  padding-top: 4mm;
+  position: relative;
+}
+
+.team-paper-pair-lane .player-hero-row-mini::before {
+  display: block;
+  width: 19mm;
+  height: 7mm;
+  background-color: #27408b;
+  position: absolute;
+  top: -7.6mm;
+  left: -0.9mm;
+  font-size: 4.4mm;
+  font-weight: bold;
+  text-align: center;
+  line-height: 8.6mm;
+}
+
+.team-paper-pair-lane .team-hero-pair-row-mid::before {
+  content: '中路';
+}
+
+.team-paper-pair-lane .team-hero-pair-row-safelane::before {
+  content: '优势路';
+}
+
+.team-paper-pair-lane .team-hero-pair-row-offlane::before {
+  content: '劣势路';
+}
+
+.team-paper-pair-lane .player-hero-avatar {
+  width: auto;
+  text-align: center;
+}
+
+.team-paper-pair-lane .team-hero-pair-row-dual .player-hero-name,
+.team-paper-pair-any .player-hero-row-mini .player-hero-name {
+  font-size: 3mm;
+}
+
+.team-paper-pair-lane .team-hero-pair-row-dual .player-hero-name>div,
+.team-paper-pair-any .player-hero-row-mini .player-hero-name>div {
+  font-size: 3.5mm;
+  display: inline-block;
+  max-width: 11.1mm;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.team-paper-pair-any .player-hero-row-mini::before {
+  display: block;
+  width: 23mm;
+  height: 5.5mm;
+  background-color: #27408b;
+  position: absolute;
+  top: -6.1mm;
+  left: -0.9mm;
+  font-size: 4mm;
+  font-weight: bold;
+  text-align: center;
+  line-height: 7.6mm;
+}
+
+.team-paper-pair-any .team-hero-pair-row-2::before {
+  content: '双人组合';
+}
+
+.team-paper-pair-any .team-hero-pair-row-3::before {
+  content: '三人组合';
+}
+
+.team-paper-pair-any .team-hero-pair-row-4::before {
+  content: '四人组合';
+}
+
+.team-paper-pair-any .team-hero-pair-row-5::before {
+  content: '五人组合';
+}
+
+.team-paper-pair-any .player-hero-row-mini {
+  margin-bottom: 7.1mm;
+  margin-top: 0;
+  padding-top: 5mm;
+  height: 37mm;
+}
+
+.team-paper-pair-any .page-body {
+  padding-top: 8.2mm;
+}
+
+.team-paper-pair-any .team-hero-pair-row-3 .player-hero-name {
+  font-size: 1.5mm;
+}
+
+.team-paper-pair-any .team-hero-pair-row-3 .player-hero-name>div {
+  font-size: 2.4mm;
+  max-width: 7.4mm;
+  vertical-align: bottom;
+}
+
+.team-paper-pair-any .team-hero-pair-row-small .player-hero-name {
+  font-size: 0;
+}
+
+.team-paper-pair-any .team-hero-pair-row-small .player-hero-name>div {
+  font-size: 0;
+  max-width: 7.4mm;
+  vertical-align: bottom;
+}
+
+.team-paper-pair-any .team-hero-pair-row-small .player-hero-avatar {
+  height: 9mm;
+  width: 20mm;
+  position: relative;
+  top: -1.5mm;
+}
+
+.team-paper-pair-any .team-hero-pair-row-small .player-hero-avatar .player-hero-avatar-image {
+  width: 8mm;
+}
+
+.team-paper-pair-any .team-hero-pair-row-5 .player-hero-avatar {
+  height: 9mm;
+  width: 25mm;
+  position: relative;
+  top: -1.5mm;
+}
+
+.team-paper-pair-any .outcome-rate-block {
+  display: none;
+}
+
+.team-paper-pair-any .win-rate-block::after {
+  display: block;
+  content: '胜率';
+  width: 100%;
+  font-size: 3.5mm;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* 
+.team-paper-pair-any .team-hero-pair-row-small .player-hero-name {
+  display: none;
+  width: 100%;
+  font-size: 3.5mm;
+
+} */

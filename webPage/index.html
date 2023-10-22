@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./scripts/jquery-3.3.1.min.js"></script>
+    <script src="./scripts/jquery-ui.min.js"></script>
+    <script src="./scripts/jquery.animateNumbers.js"></script>
+    <link rel="stylesheet" href="./style/fonts.css">
+    <link rel="stylesheet" href="./style/print.css">
+    <title>dota2-paper</title>
+</head>
+
+<body>
+    <div id="pdf">
+        <!-- <div id="player1" class="paper-single">
+            <div class="page-content">
+                <div class="page-title">
+                    <div class="team-logo">
+                        <img class="team-logo-img" src="https://cdn.stratz.com/images/dota2/teams/15.png" alt="">
+                    </div>
+                    <div class="player-title">
+                        <div class="player-name">lou</div>
+                        <div class="player-pos">一号位</div>
+                    </div>
+                    <div class="player-describe">
+                        *数据采集自 <span>2023/10/30</span> 至 <span>2023/10/30</span> 的 <span>26</span> 场天梯和 <span>11</span>
+                        场联赛
+                    </div>
+                </div>
+                <div class="page-body">
+                    <div class="player-total-data">
+                        <div class="player-hero-count-block">
+                            <div class="hero-count">使用英雄数: </div>
+                            <div class="hero-data">16</div>
+                        </div>
+                        <div class="win-rate-block">
+                            <div class="win-rate-title">胜率: </div>
+                            <div class="win-rate-progress-back">
+                                <div class="win-rate-progress" style="width: 60.5%;">
+                                    <span class="win-rate-perc">60.5%</span>
+                                    <div class="win-rate-text">胜</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="outcome-rate-block">
+                            <div class="outcome-rate-title">线优率: </div>
+                            <div class="outcome-rate-progress-back">
+                                <div class="outcome-stomp-rate-progress" style="width: 10.5%;">
+                                    <div class="outcome-stomp-rate-perc">10.5%</div>
+                                    <div class="outcome-stomp-rate-text">碾</div>
+                                </div>
+                                <div class="outcome-win-rate-progress" style="width: 50.5%;">
+                                    <div class="outcome-win-rate-perc">60.5%</div>
+                                    <div class="outcome-win-rate-text">胜+碾</div>
+                                </div>
+                                <div class="outcome-tie-rate-progress" style="width: 12.5%;">
+                                    <div class="outcome-tie-rate-perc">12.5%</div>
+                                    <div class="outcome-tie-rate-text">平</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="player-hero-data-body">
+                        <div class="player-hero-row player-hero-row-large">
+                            <div class="player-hero-block">
+                                <div class="player-hero-block-margin">
+                                    <div class="player-hero-single-title">
+                                        <div class="player-hero-single-title-left">
+                                            <div class="player-hero-avatar"><img class="player-hero-avatar-image"
+                                                    src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                    alt="">
+                                            </div>
+                                        </div>
+                                        <div class="player-hero-single-title-right">
+                                            <div class="player-hero-match-count"><span>12</span>场</div>
+                                            <div class="player-hero-name">半人马战行者</div>
+
+                                        </div>
+                                    </div>
+                                    <div class="win-rate-block">
+                                        <div class="win-rate-title">胜率: </div>
+                                        <div class="win-rate-progress-back">
+                                            <div class="win-rate-progress" style="width: 60.5%;">
+                                                <span class="win-rate-perc">60.5%</span>
+                                                <div class="win-rate-text">胜</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="outcome-rate-block">
+                                        <div class="outcome-rate-title">线优率: </div>
+                                        <div class="outcome-rate-progress-back">
+                                            <div class="outcome-stomp-rate-progress" style="width: 10.5%;">
+                                                <div class="outcome-stomp-rate-perc">10.5%</div>
+                                                <div class="outcome-stomp-rate-text">碾</div>
+                                            </div>
+                                            <div class="outcome-win-rate-progress" style="width: 50.5%;">
+                                                <div class="outcome-win-rate-perc">60.5%</div>
+                                                <div class="outcome-win-rate-text">胜+碾</div>
+                                            </div>
+                                            <div class="outcome-tie-rate-progress" style="width: 12.5%;">
+                                                <div class="outcome-tie-rate-perc">12.5%</div>
+                                                <div class="outcome-tie-rate-text">平</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="player-hero-block">
+                                <div class="player-hero-block-margin">
+                                    <div class="player-hero-single-title">
+                                        <div class="player-hero-single-title-left">
+                                            <div class="player-hero-avatar"><img class="player-hero-avatar-image"
+                                                    src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                    alt="">
+                                            </div>
+                                        </div>
+                                        <div class="player-hero-single-title-right">
+                                            <div class="player-hero-match-count"><span>12</span>场</div>
+                                            <div class="player-hero-name">半人马战行者</div>
+
+                                        </div>
+                                    </div>
+                                    <div class="win-rate-block">
+                                        <div class="win-rate-title">胜率: </div>
+                                        <div class="win-rate-progress-back">
+                                            <div class="win-rate-progress" style="width: 60.5%;">
+                                                <span class="win-rate-perc">60.5%</span>
+                                                <div class="win-rate-text">胜</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="outcome-rate-block">
+                                        <div class="outcome-rate-title">线优率: </div>
+                                        <div class="outcome-rate-progress-back">
+                                            <div class="outcome-stomp-rate-progress" style="width: 10.5%;">
+                                                <div class="outcome-stomp-rate-perc">10.5%</div>
+                                                <div class="outcome-stomp-rate-text">碾</div>
+                                            </div>
+                                            <div class="outcome-win-rate-progress" style="width: 50.5%;">
+                                                <div class="outcome-win-rate-perc">60.5%</div>
+                                                <div class="outcome-win-rate-text">胜+碾</div>
+                                            </div>
+                                            <div class="outcome-tie-rate-progress" style="width: 12.5%;">
+                                                <div class="outcome-tie-rate-perc">12.5%</div>
+                                                <div class="outcome-tie-rate-text">平</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="player-hero-block">
+                                <div class="player-hero-block-margin">
+                                    <div class="player-hero-single-title">
+                                        <div class="player-hero-single-title-left">
+                                            <div class="player-hero-avatar"><img class="player-hero-avatar-image"
+                                                    src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                    alt="">
+                                            </div>
+                                        </div>
+                                        <div class="player-hero-single-title-right">
+                                            <div class="player-hero-match-count"><span>12</span>场</div>
+                                            <div class="player-hero-name">半人马战行者</div>
+
+                                        </div>
+                                    </div>
+                                    <div class="win-rate-block">
+                                        <div class="win-rate-title">胜率: </div>
+                                        <div class="win-rate-progress-back">
+                                            <div class="win-rate-progress" style="width: 60.5%;">
+                                                <span class="win-rate-perc">60.5%</span>
+                                                <div class="win-rate-text">胜</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="outcome-rate-block">
+                                        <div class="outcome-rate-title">线优率: </div>
+                                        <div class="outcome-rate-progress-back">
+                                            <div class="outcome-stomp-rate-progress" style="width: 10.5%;">
+                                                <div class="outcome-stomp-rate-perc">10.5%</div>
+                                                <div class="outcome-stomp-rate-text">碾</div>
+                                            </div>
+                                            <div class="outcome-win-rate-progress" style="width: 50.5%;">
+                                                <div class="outcome-win-rate-perc">60.5%</div>
+                                                <div class="outcome-win-rate-text">胜+碾</div>
+                                            </div>
+                                            <div class="outcome-tie-rate-progress" style="width: 12.5%;">
+                                                <div class="outcome-tie-rate-perc">12.5%</div>
+                                                <div class="outcome-tie-rate-text">平</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-hero-row player-hero-row-mini">
+                            <div class="player-hero-block">
+                                <div class="player-hero-block-margin">
+                                    <div class="player-hero-single-title">
+                                        <div class="player-hero-single-title-left">
+                                            <div class="player-hero-avatar"><img class="player-hero-avatar-image"
+                                                    src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                    alt="">
+                                            </div>
+                                        </div>
+                                        <div class="player-hero-single-title-right">
+                                            <div class="player-hero-match-count"><span>12</span>场</div>
+                                            <div class="player-hero-name">半人马战行者</div>
+                                        </div>
+                                    </div>
+                                    <div class="win-rate-block">
+                                        <div class="win-rate-title">胜率: </div>
+                                        <div class="win-rate-progress-back">
+                                            <div class="win-rate-progress" style="width: 60.5%;">
+                                                <span class="win-rate-perc">60.5%</span>
+                                                <div class="win-rate-text">胜</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="outcome-rate-block">
+                                        <div class="outcome-rate-title">线优率: </div>
+                                        <div class="outcome-rate-progress-back">
+                                            <div class="outcome-stomp-rate-progress" style="width: 10.5%;">
+                                                <div class="outcome-stomp-rate-perc">10.5%</div>
+                                                <div class="outcome-stomp-rate-text">碾</div>
+                                            </div>
+                                            <div class="outcome-win-rate-progress" style="width: 50.5%;">
+                                                <div class="outcome-win-rate-perc">60.5%</div>
+                                                <div class="outcome-win-rate-text">胜+碾</div>
+                                            </div>
+                                            <div class="outcome-tie-rate-progress" style="width: 12.5%;">
+                                                <div class="outcome-tie-rate-perc">12.5%</div>
+                                                <div class="outcome-tie-rate-text">平</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-hero-row player-hero-row-mini">
+                            <div class="player-hero-block">
+                                <div class="player-hero-block-margin">
+                                    <div class="player-hero-single-title">
+                                        <div class="player-hero-single-title-left">
+                                            <div class="player-hero-avatar"><img class="player-hero-avatar-image"
+                                                    src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                    alt="">
+                                            </div>
+                                        </div>
+                                        <div class="player-hero-single-title-right">
+                                            <div class="player-hero-match-count"><span>12</span>场</div>
+                                            <div class="player-hero-name">半人马战行者</div>
+                                        </div>
+                                    </div>
+                                    <div class="win-rate-block">
+                                        <div class="win-rate-title">胜率: </div>
+                                        <div class="win-rate-progress-back">
+                                            <div class="win-rate-progress" style="width: 60.5%;">
+                                                <span class="win-rate-perc">60.5%</span>
+                                                <div class="win-rate-text">胜</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="outcome-rate-block">
+                                        <div class="outcome-rate-title">线优率: </div>
+                                        <div class="outcome-rate-progress-back">
+                                            <div class="outcome-stomp-rate-progress" style="width: 10.5%;">
+                                                <div class="outcome-stomp-rate-perc">10.5%</div>
+                                                <div class="outcome-stomp-rate-text">碾</div>
+                                            </div>
+                                            <div class="outcome-win-rate-progress" style="width: 50.5%;">
+                                                <div class="outcome-win-rate-perc">60.5%</div>
+                                                <div class="outcome-win-rate-text">胜+碾</div>
+                                            </div>
+                                            <div class="outcome-tie-rate-progress" style="width: 12.5%;">
+                                                <div class="outcome-tie-rate-perc">12.5%</div>
+                                                <div class="outcome-tie-rate-text">平</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="player-hero-block">
+                                <div class="player-hero-block-margin">
+                                    <div class="player-hero-single-title">
+                                        <div class="player-hero-single-title-left">
+                                            <div class="player-hero-avatar"><img class="player-hero-avatar-image"
+                                                    src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                    alt="">
+                                            </div>
+                                        </div>
+                                        <div class="player-hero-single-title-right">
+                                            <div class="player-hero-match-count"><span>12</span>场</div>
+                                            <div class="player-hero-name">半人马战行者</div>
+                                        </div>
+                                    </div>
+                                    <div class="win-rate-block">
+                                        <div class="win-rate-title">胜率: </div>
+                                        <div class="win-rate-progress-back">
+                                            <div class="win-rate-progress" style="width: 60.5%;">
+                                                <span class="win-rate-perc">60.5%</span>
+                                                <div class="win-rate-text">胜</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="outcome-rate-block">
+                                        <div class="outcome-rate-title">线优率: </div>
+                                        <div class="outcome-rate-progress-back">
+                                            <div class="outcome-stomp-rate-progress" style="width: 10.5%;">
+                                                <div class="outcome-stomp-rate-perc">10.5%</div>
+                                                <div class="outcome-stomp-rate-text">碾</div>
+                                            </div>
+                                            <div class="outcome-win-rate-progress" style="width: 50.5%;">
+                                                <div class="outcome-win-rate-perc">60.5%</div>
+                                                <div class="outcome-win-rate-text">胜+碾</div>
+                                            </div>
+                                            <div class="outcome-tie-rate-progress" style="width: 12.5%;">
+                                                <div class="outcome-tie-rate-perc">12.5%</div>
+                                                <div class="outcome-tie-rate-text">平</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="teamPart1" class="paper-single team-paper">
+            <div class="page-content">
+                <div class="page-title">
+                    <div class="team-logo">
+                        <img class="team-logo-img" src="https://cdn.stratz.com/images/dota2/teams/15.png" alt="">
+                    </div>
+                    <div class="player-title">
+                        <div class="player-name">LGD</div>
+                        <div class="player-pos">队伍数据——总览</div>
+                    </div>
+                    <div class="player-describe">
+                        *数据采集自包括 <span>The International 12</span> 在内 <span>1</span> 项赛事中的 <span>14</span> 局比赛
+                    </div>
+                </div>
+                <div class="page-body">
+                    <div class="player-total-data">
+                        <div class="player-hero-count-block">
+                            <div class="hero-count">使用英雄数: </div>
+                            <div class="hero-data">16</div>
+                        </div>
+                        <div class="win-rate-block">
+                            <div class="win-rate-title">胜率: </div>
+                            <div class="win-rate-progress-back">
+                                <div class="win-rate-progress" style="width: 60.5%;">
+                                    <span class="win-rate-perc">60.5%</span>
+                                    <div class="win-rate-text">胜</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="outcome-rate-block">
+                            <div class="outcome-rate-title">总线优率: </div>
+                            <div class="outcome-rate-progress-back">
+                                <div class="outcome-stomp-rate-progress" style="width: 10.5%;">
+                                    <div class="outcome-stomp-rate-perc">10.5%</div>
+                                    <div class="outcome-stomp-rate-text">碾</div>
+                                </div>
+                                <div class="outcome-win-rate-progress" style="width: 50.5%;">
+                                    <div class="outcome-win-rate-perc">60.5%</div>
+                                    <div class="outcome-win-rate-text">胜+碾</div>
+                                </div>
+                                <div class="outcome-tie-rate-progress" style="width: 12.5%;">
+                                    <div class="outcome-tie-rate-perc">12.5%</div>
+                                    <div class="outcome-tie-rate-text">平</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="progress-sample">
+                            <div class="pos-sample">
+                                <div class="pos-text">m场n号位：</div>
+                                <div class="pos-sample-div">
+                                    <div class="pos-title">n</div>*<span>m</span>
+                                </div>
+                            </div>
+                            <div class="stomp-rate-sample">
+                                <div class="stomp-text">碾：</div>
+                                <div class="stomp-progress"></div>
+                            </div>
+                            <div class="win-rate-sample">
+                                <div class="win-text">胜+碾：</div>
+                                <div class="win-progress"></div>
+                            </div>
+                            <div class="tie-rate-sample">
+                                <div class="tie-text">平：</div>
+                                <div class="tie-progress"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="player-hero-data-body">
+                        <div class="player-hero-row player-hero-row-large">
+                            <div class="player-hero-block">
+                                <div class="player-hero-block-margin">
+                                    <div class="team-hero-block-left">
+                                        <div class="player-hero-single-title">
+                                            <div class="player-hero-single-title-left">
+                                                <div class="player-hero-avatar"><img class="player-hero-avatar-image"
+                                                        src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                        alt="">
+                                                </div>
+                                            </div>
+                                            <div class="player-hero-single-title-right">
+                                                <div class="player-hero-match-count"><span>12</span>场</div>
+                                                <div class="player-hero-name">半人马战行者</div>
+                                            </div>
+                                        </div>
+                                        <div class="win-rate-block">
+                                            <div class="win-rate-title">胜率: </div>
+                                            <div class="win-rate-progress-back">
+                                                <div class="win-rate-progress" style="width: 60.5%;">
+                                                    <span class="win-rate-perc">60.5%</span>
+                                                    <div class="win-rate-text">胜</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="outcome-rate-block">
+                                            <div class="outcome-rate-title">线优率: </div>
+                                            <div class="outcome-rate-progress-back">
+                                                <div class="outcome-stomp-rate-progress" style="width: 10.5%;">
+                                                    <div class="outcome-stomp-rate-perc">10.5%</div>
+                                                    <div class="outcome-stomp-rate-text">碾</div>
+                                                </div>
+                                                <div class="outcome-win-rate-progress" style="width: 50.5%;">
+                                                    <div class="outcome-win-rate-perc">60.5%</div>
+                                                    <div class="outcome-win-rate-text">胜+碾</div>
+                                                </div>
+                                                <div class="outcome-tie-rate-progress" style="width: 12.5%;">
+                                                    <div class="outcome-tie-rate-perc">12.5%</div>
+                                                    <div class="outcome-tie-rate-text">平</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="team-hero-block-right">
+                                        <div class="team-hero-pos-single">
+                                            <div class="pos-title">1</div>
+                                            <div class="pos-count">1</div>
+                                        </div>
+                                        <div class="team-hero-pos-single">
+                                            <div class="pos-title">2</div>
+                                            <div class="pos-count">1</div>
+                                        </div>
+                                        <div class="team-hero-pos-single">
+                                            <div class="pos-title">3</div>
+                                            <div class="pos-count">1</div>
+                                        </div>
+                                        <div class="team-hero-pos-single">
+                                            <div class="pos-title">4</div>
+                                            <div class="pos-count">1</div>
+                                        </div>
+                                        <div class="team-hero-pos-single">
+                                            <div class="pos-title">5</div>
+                                            <div class="pos-count">1</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="player-hero-block">
+                                <div class="player-hero-block-margin">
+                                    <div class="player-hero-single-title">
+                                        <div class="player-hero-single-title-left">
+                                            <div class="player-hero-avatar"><img class="player-hero-avatar-image"
+                                                    src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                    alt="">
+                                            </div>
+                                        </div>
+                                        <div class="player-hero-single-title-right">
+                                            <div class="player-hero-match-count"><span>12</span>场</div>
+                                            <div class="player-hero-name">半人马战行者</div>
+                                        </div>
+                                    </div>
+                                    <div class="win-rate-block">
+                                        <div class="win-rate-title">胜率: </div>
+                                        <div class="win-rate-progress-back">
+                                            <div class="win-rate-progress" style="width: 60.5%;">
+                                                <span class="win-rate-perc">60.5%</span>
+                                                <div class="win-rate-text">胜</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="outcome-rate-block">
+                                        <div class="outcome-rate-title">线优率: </div>
+                                        <div class="outcome-rate-progress-back">
+                                            <div class="outcome-stomp-rate-progress" style="width: 10.5%;">
+                                                <div class="outcome-stomp-rate-perc">10.5%</div>
+                                                <div class="outcome-stomp-rate-text">碾</div>
+                                            </div>
+                                            <div class="outcome-win-rate-progress" style="width: 50.5%;">
+                                                <div class="outcome-win-rate-perc">60.5%</div>
+                                                <div class="outcome-win-rate-text">胜+碾</div>
+                                            </div>
+                                            <div class="outcome-tie-rate-progress" style="width: 12.5%;">
+                                                <div class="outcome-tie-rate-perc">12.5%</div>
+                                                <div class="outcome-tie-rate-text">平</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="player-hero-block">
+                                <div class="player-hero-block-margin">
+                                    <div class="player-hero-single-title">
+                                        <div class="player-hero-single-title-left">
+                                            <div class="player-hero-avatar"><img class="player-hero-avatar-image"
+                                                    src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                    alt="">
+                                            </div>
+                                        </div>
+                                        <div class="player-hero-single-title-right">
+                                            <div class="player-hero-match-count"><span>12</span>场</div>
+                                            <div class="player-hero-name">半人马战行者</div>
+
+                                        </div>
+                                    </div>
+                                    <div class="win-rate-block">
+                                        <div class="win-rate-title">胜率: </div>
+                                        <div class="win-rate-progress-back">
+                                            <div class="win-rate-progress" style="width: 60.5%;">
+                                                <span class="win-rate-perc">60.5%</span>
+                                                <div class="win-rate-text">胜</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="outcome-rate-block">
+                                        <div class="outcome-rate-title">线优率: </div>
+                                        <div class="outcome-rate-progress-back">
+                                            <div class="outcome-stomp-rate-progress" style="width: 10.5%;">
+                                                <div class="outcome-stomp-rate-perc">10.5%</div>
+                                                <div class="outcome-stomp-rate-text">碾</div>
+                                            </div>
+                                            <div class="outcome-win-rate-progress" style="width: 50.5%;">
+                                                <div class="outcome-win-rate-perc">60.5%</div>
+                                                <div class="outcome-win-rate-text">胜+碾</div>
+                                            </div>
+                                            <div class="outcome-tie-rate-progress" style="width: 12.5%;">
+                                                <div class="outcome-tie-rate-perc">12.5%</div>
+                                                <div class="outcome-tie-rate-text">平</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-hero-row player-hero-row-mini">
+                            <div class="player-hero-block">
+                                <div class="player-hero-block-margin">
+                                    <div class="team-hero-block-left">
+                                        <div class="player-hero-single-title">
+                                            <div class="player-hero-single-title-left">
+                                                <div class="player-hero-avatar"><img class="player-hero-avatar-image"
+                                                        src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                        alt="">
+                                                </div>
+                                            </div>
+                                            <div class="player-hero-single-title-right">
+                                                <div class="player-hero-match-count"><span>12</span>场</div>
+                                                <div class="player-hero-name">半人马战行者</div>
+                                            </div>
+                                        </div>
+                                        <div class="win-rate-block">
+                                            <div class="win-rate-title">胜率: </div>
+                                            <div class="win-rate-progress-back">
+                                                <div class="win-rate-progress" style="width: 60.5%;">
+                                                    <span class="win-rate-perc">60.5%</span>
+                                                    <div class="win-rate-text">胜</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="outcome-rate-block">
+                                            <div class="outcome-rate-title">线优率: </div>
+                                            <div class="outcome-rate-progress-back">
+                                                <div class="outcome-stomp-rate-progress" style="width: 10.5%;">
+                                                    <div class="outcome-stomp-rate-perc">10.5%</div>
+                                                    <div class="outcome-stomp-rate-text">碾</div>
+                                                </div>
+                                                <div class="outcome-win-rate-progress" style="width: 50.5%;">
+                                                    <div class="outcome-win-rate-perc">60.5%</div>
+                                                    <div class="outcome-win-rate-text">胜+碾</div>
+                                                </div>
+                                                <div class="outcome-tie-rate-progress" style="width: 12.5%;">
+                                                    <div class="outcome-tie-rate-perc">12.5%</div>
+                                                    <div class="outcome-tie-rate-text">平</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="team-hero-block-right">
+                                        <div class="team-hero-pos-single">
+                                            <div class="pos-title">1</div>
+                                            <div class="pos-count">10</div>
+                                        </div>
+                                        <div class="team-hero-pos-single">
+                                            <div class="pos-title">2</div>
+                                            <div class="pos-count">1</div>
+                                        </div>
+                                        <div class="team-hero-pos-single">
+                                            <div class="pos-title">3</div>
+                                            <div class="pos-count">1</div>
+                                        </div>
+                                        <div class="team-hero-pos-single">
+                                            <div class="pos-title">4</div>
+                                            <div class="pos-count">1</div>
+                                        </div>
+                                        <div class="team-hero-pos-single">
+                                            <div class="pos-title">5</div>
+                                            <div class="pos-count">1</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-hero-row player-hero-row-mini">
+                            <div class="player-hero-block">
+                                <div class="player-hero-block-margin">
+                                    <div class="player-hero-single-title">
+                                        <div class="player-hero-single-title-left">
+                                            <div class="player-hero-avatar"><img class="player-hero-avatar-image"
+                                                    src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                    alt="">
+                                            </div>
+                                        </div>
+                                        <div class="player-hero-single-title-right">
+                                            <div class="player-hero-match-count"><span>12</span>场</div>
+                                            <div class="player-hero-name">半人马战行者</div>
+                                        </div>
+                                    </div>
+                                    <div class="win-rate-block">
+                                        <div class="win-rate-title">胜率: </div>
+                                        <div class="win-rate-progress-back">
+                                            <div class="win-rate-progress" style="width: 60.5%;">
+                                                <span class="win-rate-perc">60.5%</span>
+                                                <div class="win-rate-text">胜</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="outcome-rate-block">
+                                        <div class="outcome-rate-title">线优率: </div>
+                                        <div class="outcome-rate-progress-back">
+                                            <div class="outcome-stomp-rate-progress" style="width: 10.5%;">
+                                                <div class="outcome-stomp-rate-perc">10.5%</div>
+                                                <div class="outcome-stomp-rate-text">碾</div>
+                                            </div>
+                                            <div class="outcome-win-rate-progress" style="width: 50.5%;">
+                                                <div class="outcome-win-rate-perc">60.5%</div>
+                                                <div class="outcome-win-rate-text">胜+碾</div>
+                                            </div>
+                                            <div class="outcome-tie-rate-progress" style="width: 12.5%;">
+                                                <div class="outcome-tie-rate-perc">12.5%</div>
+                                                <div class="outcome-tie-rate-text">平</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="player-hero-block">
+                                <div class="player-hero-block-margin">
+                                    <div class="player-hero-single-title">
+                                        <div class="player-hero-single-title-left">
+                                            <div class="player-hero-avatar"><img class="player-hero-avatar-image"
+                                                    src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                    alt="">
+                                            </div>
+                                        </div>
+                                        <div class="player-hero-single-title-right">
+                                            <div class="player-hero-match-count"><span>12</span>场</div>
+                                            <div class="player-hero-name">半人马战行者</div>
+                                        </div>
+                                    </div>
+                                    <div class="win-rate-block">
+                                        <div class="win-rate-title">胜率: </div>
+                                        <div class="win-rate-progress-back">
+                                            <div class="win-rate-progress" style="width: 60.5%;">
+                                                <span class="win-rate-perc">60.5%</span>
+                                                <div class="win-rate-text">胜</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="outcome-rate-block">
+                                        <div class="outcome-rate-title">线优率: </div>
+                                        <div class="outcome-rate-progress-back">
+                                            <div class="outcome-stomp-rate-progress" style="width: 10.5%;">
+                                                <div class="outcome-stomp-rate-perc">10.5%</div>
+                                                <div class="outcome-stomp-rate-text">碾</div>
+                                            </div>
+                                            <div class="outcome-win-rate-progress" style="width: 50.5%;">
+                                                <div class="outcome-win-rate-perc">60.5%</div>
+                                                <div class="outcome-win-rate-text">胜+碾</div>
+                                            </div>
+                                            <div class="outcome-tie-rate-progress" style="width: 12.5%;">
+                                                <div class="outcome-tie-rate-perc">12.5%</div>
+                                                <div class="outcome-tie-rate-text">平</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="teamPart2" class="paper-single team-paper team-paper-pair-lane">
+            <div class="page-content">
+                <div class="page-title">
+                    <div class="team-logo">
+                        <img class="team-logo-img" src="https://cdn.stratz.com/images/dota2/teams/15.png" alt="">
+                    </div>
+                    <div class="player-title">
+                        <div class="player-name">LGD</div>
+                        <div class="player-pos">队伍数据——分路数据</div>
+                    </div>
+                    <div class="player-describe">
+                        *数据采集自包括 <span>The International 12</span> 在内 <span>1</span> 项赛事中的 <span>14</span> 局比赛
+                    </div>
+                </div>
+                <div class="page-body">
+                    <div class="player-total-data team-lane-total-data">
+                        <div class="outcome-rate-block mid-lane">
+                            <div class="outcome-rate-title lane-rate-title">中路线优率: </div>
+                            <div class="outcome-rate-progress-back">
+                                <div class="outcome-stomp-rate-progress" style="width: 10.5%;">
+                                    <div class="outcome-stomp-rate-perc">10.5%</div>
+                                    <div class="outcome-stomp-rate-text">碾</div>
+                                </div>
+                                <div class="outcome-win-rate-progress" style="width: 50.5%;">
+                                    <div class="outcome-win-rate-perc">60.5%</div>
+                                    <div class="outcome-win-rate-text">胜+碾</div>
+                                </div>
+                                <div class="outcome-tie-rate-progress" style="width: 12.5%;">
+                                    <div class="outcome-tie-rate-perc">12.5%</div>
+                                    <div class="outcome-tie-rate-text">平</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="outcome-rate-block safe-lane">
+                            <div class="outcome-rate-title lane-rate-title">优势路线优率: </div>
+                            <div class="outcome-rate-progress-back">
+                                <div class="outcome-stomp-rate-progress" style="width: 10.5%;">
+                                    <div class="outcome-stomp-rate-perc">10.5%</div>
+                                    <div class="outcome-stomp-rate-text">碾</div>
+                                </div>
+                                <div class="outcome-win-rate-progress" style="width: 50.5%;">
+                                    <div class="outcome-win-rate-perc">60.5%</div>
+                                    <div class="outcome-win-rate-text">胜+碾</div>
+                                </div>
+                                <div class="outcome-tie-rate-progress" style="width: 12.5%;">
+                                    <div class="outcome-tie-rate-perc">12.5%</div>
+                                    <div class="outcome-tie-rate-text">平</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="outcome-rate-block off-lane">
+                            <div class="outcome-rate-title lane-rate-title">劣势路线优率: </div>
+                            <div class="outcome-rate-progress-back">
+                                <div class="outcome-stomp-rate-progress" style="width: 10.5%;">
+                                    <div class="outcome-stomp-rate-perc">10.5%</div>
+                                    <div class="outcome-stomp-rate-text">碾</div>
+                                </div>
+                                <div class="outcome-win-rate-progress" style="width: 50.5%;">
+                                    <div class="outcome-win-rate-perc">60.5%</div>
+                                    <div class="outcome-win-rate-text">胜+碾</div>
+                                </div>
+                                <div class="outcome-tie-rate-progress" style="width: 12.5%;">
+                                    <div class="outcome-tie-rate-perc">12.5%</div>
+                                    <div class="outcome-tie-rate-text">平</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="progress-sample">
+                            <div class="stomp-rate-sample">
+                                <div class="stomp-text">碾：</div>
+                                <div class="stomp-progress"></div>
+                            </div>
+                            <div class="win-rate-sample">
+                                <div class="win-text">胜+碾：</div>
+                                <div class="win-progress"></div>
+                            </div>
+                            <div class="tie-rate-sample">
+                                <div class="tie-text">平：</div>
+                                <div class="tie-progress"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="player-hero-data-body">
+                        <div
+                            class="player-hero-row player-hero-row-mini team-hero-pair-row-mid team-hero-pair-row-single">
+                            <div class="player-hero-block">
+                                <div class="player-hero-block-margin">
+                                    <div class="team-hero-block-left">
+                                        <div class="player-hero-single-title">
+                                            <div class="player-hero-single-title-left">
+                                                <div class="player-hero-avatar"><img class="player-hero-avatar-image"
+                                                        src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                        alt="">
+                                                </div>
+                                            </div>
+                                            <div class="player-hero-single-title-right">
+                                                <div class="player-hero-match-count"><span>12</span>场</div>
+                                                <div class="player-hero-name">半人马战行者</div>
+                                            </div>
+                                        </div>
+                                        <div class="win-rate-block">
+                                            <div class="win-rate-title">胜率: </div>
+                                            <div class="win-rate-progress-back">
+                                                <div class="win-rate-progress" style="width: 60.5%;">
+                                                    <span class="win-rate-perc">60.5%</span>
+                                                    <div class="win-rate-text">胜</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="outcome-rate-block">
+                                            <div class="outcome-rate-title">线优率: </div>
+                                            <div class="outcome-rate-progress-back">
+                                                <div class="outcome-stomp-rate-progress" style="width: 10.5%;">
+                                                    <div class="outcome-stomp-rate-perc">10.5%</div>
+                                                    <div class="outcome-stomp-rate-text">碾</div>
+                                                </div>
+                                                <div class="outcome-win-rate-progress" style="width: 50.5%;">
+                                                    <div class="outcome-win-rate-perc">60.5%</div>
+                                                    <div class="outcome-win-rate-text">胜+碾</div>
+                                                </div>
+                                                <div class="outcome-tie-rate-progress" style="width: 12.5%;">
+                                                    <div class="outcome-tie-rate-perc">12.5%</div>
+                                                    <div class="outcome-tie-rate-text">平</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="player-hero-row player-hero-row-mini team-hero-pair-row-safelane team-hero-pair-row-dual">
+                            <div class="player-hero-block">
+                                <div class="player-hero-block-margin">
+                                    <div class="team-hero-block-left">
+                                        <div class="player-hero-single-title">
+                                            <div class="player-hero-single-title-left">
+                                                <div class="player-hero-avatar"><img class="player-hero-avatar-image"
+                                                        src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                        alt=""><img class="player-hero-avatar-image"
+                                                        src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                        alt="">
+                                                </div>
+                                            </div>
+                                            <div class="player-hero-single-title-right">
+                                                <div class="player-hero-match-count"><span>12</span>场</div>
+                                                <div class="player-hero-name">
+                                                    <div>半人马战行者</div>&<div>半人马战行者</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="win-rate-block">
+                                            <div class="win-rate-title">胜率: </div>
+                                            <div class="win-rate-progress-back">
+                                                <div class="win-rate-progress" style="width: 60.5%;">
+                                                    <span class="win-rate-perc">60.5%</span>
+                                                    <div class="win-rate-text">胜</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="outcome-rate-block">
+                                            <div class="outcome-rate-title">线优率: </div>
+                                            <div class="outcome-rate-progress-back">
+                                                <div class="outcome-stomp-rate-progress" style="width: 10.5%;">
+                                                    <div class="outcome-stomp-rate-perc">10.5%</div>
+                                                    <div class="outcome-stomp-rate-text">碾</div>
+                                                </div>
+                                                <div class="outcome-win-rate-progress" style="width: 50.5%;">
+                                                    <div class="outcome-win-rate-perc">60.5%</div>
+                                                    <div class="outcome-win-rate-text">胜+碾</div>
+                                                </div>
+                                                <div class="outcome-tie-rate-progress" style="width: 12.5%;">
+                                                    <div class="outcome-tie-rate-perc">12.5%</div>
+                                                    <div class="outcome-tie-rate-text">平</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="player-hero-row player-hero-row-mini team-hero-pair-row-offlane team-hero-pair-row-dual">
+                            <div class="player-hero-block">
+                                <div class="player-hero-block-margin">
+                                    <div class="team-hero-block-left">
+                                        <div class="player-hero-single-title">
+                                            <div class="player-hero-single-title-left">
+                                                <div class="player-hero-avatar"><img class="player-hero-avatar-image"
+                                                        src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                        alt=""><img class="player-hero-avatar-image"
+                                                        src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                        alt="">
+                                                </div>
+                                            </div>
+                                            <div class="player-hero-single-title-right">
+                                                <div class="player-hero-match-count"><span>12</span>场</div>
+                                                <div class="player-hero-name">
+                                                    <div>半人马战行者</div>&<div>半人马战行者</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="win-rate-block">
+                                            <div class="win-rate-title">胜率: </div>
+                                            <div class="win-rate-progress-back">
+                                                <div class="win-rate-progress" style="width: 60.5%;">
+                                                    <span class="win-rate-perc">60.5%</span>
+                                                    <div class="win-rate-text">胜</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="outcome-rate-block">
+                                            <div class="outcome-rate-title">线优率: </div>
+                                            <div class="outcome-rate-progress-back">
+                                                <div class="outcome-stomp-rate-progress" style="width: 10.5%;">
+                                                    <div class="outcome-stomp-rate-perc">10.5%</div>
+                                                    <div class="outcome-stomp-rate-text">碾</div>
+                                                </div>
+                                                <div class="outcome-win-rate-progress" style="width: 50.5%;">
+                                                    <div class="outcome-win-rate-perc">60.5%</div>
+                                                    <div class="outcome-win-rate-text">胜+碾</div>
+                                                </div>
+                                                <div class="outcome-tie-rate-progress" style="width: 12.5%;">
+                                                    <div class="outcome-tie-rate-perc">12.5%</div>
+                                                    <div class="outcome-tie-rate-text">平</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="teamPart3" class="paper-single team-paper team-paper-pair-lane team-paper-pair-any">
+            <div class="page-content">
+                <div class="page-title">
+                    <div class="team-logo">
+                        <img class="team-logo-img" src="https://cdn.stratz.com/images/dota2/teams/15.png" alt="">
+                    </div>
+                    <div class="player-title">
+                        <div class="player-name">LGD</div>
+                        <div class="player-pos">队伍数据——分路数据</div>
+                    </div>
+                    <div class="player-describe">
+                        *数据采集自包括 <span>The International 12</span> 在内 <span>1</span> 项赛事中的 <span>14</span> 局比赛
+                    </div>
+                </div>
+                <div class="page-body">
+                    <div class="player-hero-data-body">
+                        <div class="player-hero-row player-hero-row-mini team-hero-pair-row-2 team-hero-pair-row-big">
+                            <div class="player-hero-block">
+                                <div class="player-hero-block-margin">
+                                    <div class="team-hero-block-left">
+                                        <div class="player-hero-single-title">
+                                            <div class="player-hero-single-title-left">
+                                                <div class="player-hero-avatar"><img class="player-hero-avatar-image"
+                                                        src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                        alt=""><img class="player-hero-avatar-image"
+                                                        src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                        alt="">
+                                                </div>
+                                            </div>
+                                            <div class="player-hero-single-title-right">
+                                                <div class="player-hero-match-count"><span>12</span>场</div>
+                                                <div class="player-hero-name">
+                                                    <div>半人马战行者</div>&<div>半人马战行者</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="win-rate-block">
+                                            <div class="win-rate-title">胜率: </div>
+                                            <div class="win-rate-progress-back">
+                                                <div class="win-rate-progress" style="width: 60.5%;">
+                                                    <span class="win-rate-perc">60.5%</span>
+                                                    <div class="win-rate-text">胜</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="outcome-rate-block">
+                                            <div class="outcome-rate-title">线优率: </div>
+                                            <div class="outcome-rate-progress-back">
+                                                <div class="outcome-stomp-rate-progress" style="width: 10.5%;">
+                                                    <div class="outcome-stomp-rate-perc">10.5%</div>
+                                                    <div class="outcome-stomp-rate-text">碾</div>
+                                                </div>
+                                                <div class="outcome-win-rate-progress" style="width: 50.5%;">
+                                                    <div class="outcome-win-rate-perc">60.5%</div>
+                                                    <div class="outcome-win-rate-text">胜+碾</div>
+                                                </div>
+                                                <div class="outcome-tie-rate-progress" style="width: 12.5%;">
+                                                    <div class="outcome-tie-rate-perc">12.5%</div>
+                                                    <div class="outcome-tie-rate-text">平</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-hero-row player-hero-row-mini team-hero-pair-row-3 team-hero-pair-row-big">
+                            <div class="player-hero-block">
+                                <div class="player-hero-block-margin">
+                                    <div class="team-hero-block-left">
+                                        <div class="player-hero-single-title">
+                                            <div class="player-hero-single-title-left">
+                                                <div class="player-hero-avatar"><img class="player-hero-avatar-image"
+                                                        src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                        alt=""><img class="player-hero-avatar-image"
+                                                        src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                        alt=""><img class="player-hero-avatar-image"
+                                                        src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                        alt="">
+                                                </div>
+                                            </div>
+                                            <div class="player-hero-single-title-right">
+                                                <div class="player-hero-match-count"><span>12</span>场</div>
+                                                <div class="player-hero-name">
+                                                    <div>半人马战行者</div>&<div>半人马战行者</div>&<div>半人马战行者</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="win-rate-block">
+                                            <div class="win-rate-title">胜率: </div>
+                                            <div class="win-rate-progress-back">
+                                                <div class="win-rate-progress" style="width: 60.5%;">
+                                                    <span class="win-rate-perc">60.5%</span>
+                                                    <div class="win-rate-text">胜</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="outcome-rate-block">
+                                            <div class="outcome-rate-title">线优率: </div>
+                                            <div class="outcome-rate-progress-back">
+                                                <div class="outcome-stomp-rate-progress" style="width: 10.5%;">
+                                                    <div class="outcome-stomp-rate-perc">10.5%</div>
+                                                    <div class="outcome-stomp-rate-text">碾</div>
+                                                </div>
+                                                <div class="outcome-win-rate-progress" style="width: 50.5%;">
+                                                    <div class="outcome-win-rate-perc">60.5%</div>
+                                                    <div class="outcome-win-rate-text">胜+碾</div>
+                                                </div>
+                                                <div class="outcome-tie-rate-progress" style="width: 12.5%;">
+                                                    <div class="outcome-tie-rate-perc">12.5%</div>
+                                                    <div class="outcome-tie-rate-text">平</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-hero-row player-hero-row-mini team-hero-pair-row-4 team-hero-pair-row-small">
+                            <div class="player-hero-block">
+                                <div class="player-hero-block-margin">
+                                    <div class="team-hero-block-left">
+                                        <div class="player-hero-single-title">
+                                            <div class="player-hero-single-title-left">
+                                                <div class="player-hero-avatar"><img class="player-hero-avatar-image"
+                                                        src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                        alt=""><img class="player-hero-avatar-image"
+                                                        src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                        alt=""><img class="player-hero-avatar-image"
+                                                        src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                        alt=""><img class="player-hero-avatar-image"
+                                                        src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                        alt="">
+                                                </div>
+                                            </div>
+                                            <div class="player-hero-single-title-right">
+                                                <div class="player-hero-match-count"><span>12</span>场</div>
+                                                <div class="player-hero-name">
+                                                    <div>半人马战行者</div>&<div>半人马战行者</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="win-rate-block">
+                                            <div class="win-rate-title">胜率: </div>
+                                            <div class="win-rate-progress-back">
+                                                <div class="win-rate-progress" style="width: 60.5%;">
+                                                    <span class="win-rate-perc">60.5%</span>
+                                                    <div class="win-rate-text">胜</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="outcome-rate-block">
+                                            <div class="outcome-rate-title">线优率: </div>
+                                            <div class="outcome-rate-progress-back">
+                                                <div class="outcome-stomp-rate-progress" style="width: 10.5%;">
+                                                    <div class="outcome-stomp-rate-perc">10.5%</div>
+                                                    <div class="outcome-stomp-rate-text">碾</div>
+                                                </div>
+                                                <div class="outcome-win-rate-progress" style="width: 50.5%;">
+                                                    <div class="outcome-win-rate-perc">60.5%</div>
+                                                    <div class="outcome-win-rate-text">胜+碾</div>
+                                                </div>
+                                                <div class="outcome-tie-rate-progress" style="width: 12.5%;">
+                                                    <div class="outcome-tie-rate-perc">12.5%</div>
+                                                    <div class="outcome-tie-rate-text">平</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-hero-row player-hero-row-mini team-hero-pair-row-5 team-hero-pair-row-small">
+                            <div class="player-hero-block">
+                                <div class="player-hero-block-margin">
+                                    <div class="team-hero-block-left">
+                                        <div class="player-hero-single-title">
+                                            <div class="player-hero-single-title-left">
+                                                <div class="player-hero-avatar"><img class="player-hero-avatar-image"
+                                                        src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                        alt=""><img class="player-hero-avatar-image"
+                                                        src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                        alt=""><img class="player-hero-avatar-image"
+                                                        src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                        alt=""><img class="player-hero-avatar-image"
+                                                        src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                        alt=""><img class="player-hero-avatar-image"
+                                                        src="https://cdn.stratz.com/images/dota2/heroes/luna_icon.png"
+                                                        alt="">
+                                                </div>
+                                            </div>
+                                            <div class="player-hero-single-title-right">
+                                                <div class="player-hero-match-count"><span>12</span>场</div>
+                                                <div class="player-hero-name">半人马战行者</div>
+                                            </div>
+                                        </div>
+                                        <div class="win-rate-block">
+                                            <div class="win-rate-title">胜率: </div>
+                                            <div class="win-rate-progress-back">
+                                                <div class="win-rate-progress" style="width: 60.5%;">
+                                                    <span class="win-rate-perc">60.5%</span>
+                                                    <div class="win-rate-text">胜</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="outcome-rate-block">
+                                            <div class="outcome-rate-title">线优率: </div>
+                                            <div class="outcome-rate-progress-back">
+                                                <div class="outcome-stomp-rate-progress" style="width: 10.5%;">
+                                                    <div class="outcome-stomp-rate-perc">10.5%</div>
+                                                    <div class="outcome-stomp-rate-text">碾</div>
+                                                </div>
+                                                <div class="outcome-win-rate-progress" style="width: 50.5%;">
+                                                    <div class="outcome-win-rate-perc">60.5%</div>
+                                                    <div class="outcome-win-rate-text">胜+碾</div>
+                                                </div>
+                                                <div class="outcome-tie-rate-progress" style="width: 12.5%;">
+                                                    <div class="outcome-tie-rate-perc">12.5%</div>
+                                                    <div class="outcome-tie-rate-text">平</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <!-- <script src="./scripts/websocket-heartbeat.js"></script>
+    <script src="./scripts/overlay.js"></script> -->
+    <script src="apiData.js"></script>
+    <script src="./scripts/printPage.js"></script>
+</body>
+
+</html>

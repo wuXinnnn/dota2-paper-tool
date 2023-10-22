@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "SmileySans";
+  src: url("../fonts/SmileySans-Oblique.otf");
+}
+
+@font-face {
+  font-family: "GLSB";
+  src: url("../fonts/GemunuLibre-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "GLEB";
+  src: url("../fonts/GemunuLibre-ExtraBold.ttf");
+}
+
+@font-face {
+  font-family: "DYBBT";
+  src: url("../fonts/FZZH-DYBBTJW.TTf");
+}
+
+@font-face {
+  font-family: "zywyh";
+  src: url("../fonts/zywyh.ttf");
+}
+
+@font-face {
+  font-family: "GLEB For Number";
+  src: url("../fonts/GemunuLibre-ExtraBold.ttf");
+  unicode-range: U+30-39;
+}
